@@ -2,7 +2,7 @@
 
 ## A Showcase of My Work
 
-Welcome to my personal portfolio website! I'm Archie Michael Ubong, a [Your Profession/Area of Expertise, e.g., "Full-Stack Web Developer"], and this site serves as a platform to showcase my skills, projects, and experience.
+Welcome to my personal portfolio website! I'm Archie Michael Ubong, a Full-Stack Web Developer , and this site serves as a platform to showcase my skills, projects, and experience.
 
 ## What You'll Find
 
@@ -34,11 +34,9 @@ To run this project locally:
 1. **Clone the repository:**
 
     ```bash
-    git clone [your-repo-url]
+    git clone [https://github.com/Ubongar/portfolio-website-2]
     cd portfolio-website-2
     ```
-
-    *(Replace `https://github.com/Ubongar/portfolio-website-2` with the URL of your repository.)*
 
 2. **Install dependencies:**
 
