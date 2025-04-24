@@ -21,9 +21,9 @@ This portfolio is built using the following technologies:
 * **React:** A JavaScript library for building dynamic user interfaces.
 * **TypeScript:** A superset of JavaScript that adds static typing for improved code maintainability and scalability.
 * **Vite:** A build tool that provides a fast development environment and optimizes code for production.
-* **Styling:** [Specify your styling approach, e.g., "Tailwind CSS for utility-first styling", "Styled Components for component-level styling", "CSS Modules for scoped styling"]
-* **State Management:** [If applicable, specify how you manage state, e.g., "React Context for simple state management", "Redux for complex application state", "Zustand for a simpler state management solution"]
-* **Routing:** [React Router for navigation]
+* **Styling:** Tailwind CSS for utility-first styling.
+<!-- * **State Management:** React Context for simple state management. -->
+* **Routing:** React Router for navigation.
 * **Build Tools:**
 * **npm:** A package manager used to install and manage project dependencies.
 
