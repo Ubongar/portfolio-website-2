@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               Portfolio<span className="text-indigo-500">.</span>
             </a>
             <p className="mt-2 text-gray-400 max-w-md">
-              Creating beautiful, responsive websites that help businesses achieve their goals.
+              Trust me with the keys to your website and watch it unfold like you have never seen before.
             </p>
           </div>
           
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+            &copy; {new Date().getFullYear()} Archie Michael Ubong. All rights reserved.
           </p>
           
           <nav className="flex space-x-6">

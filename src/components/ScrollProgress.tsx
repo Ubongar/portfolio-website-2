@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
 
 const ScrollProgress: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState('');
+  const [isScrolling, setIsScrolling] = useState(false); // New state for scrolling status
 
   useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+
     const handleScroll = () => {
+      setIsScrolling(true); // Set isScrolling to true when scrolling starts
+
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalHeight) * 100;
       setScrollProgress(progress);
@@ -19,6 +25,14 @@ const ScrollProgress: React.FC = () => {
           break;
         }
       }
+
+      // Clear any existing timeout
+      clearTimeout(scrollTimeout);
+
+      // Set a timeout to change isScrolling back to false after a delay
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false); // Set isScrolling to false after scrolling stops
+      }, 300); // 300ms delay, adjust as needed
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -26,19 +40,24 @@ const ScrollProgress: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
-      <div className="bg-gray-800/50 backdrop-blur-sm rounded-full p-3 shadow-lg">
-        <div className="h-40 w-1 bg-gray-700 rounded-full relative">
-          <div 
-            className="absolute w-1 bg-indigo-600 rounded-full transition-all duration-300"
-            style={{ height: `${scrollProgress}%` }}
+    <motion.div // Use motion.div for animation
+      className="fixed right-4 top-1/2 transform -translate-y-1/2 z-5000 hidden lg:block"
+      initial={{ opacity: 0 }} // Initially invisible
+      animate={{ opacity: isScrolling ? 1 : 0.1 }} // Animate opacity based on scrolling
+      transition={{ duration: 0.2 }} // Short duration for fade in/out
+    >
+      <div className="bg-gray-800/50 backdrop-blur-sm rounded-full p-3 shadow-lg relative z-5000">
+        <div className="h-40 w-1 bg-gray-700 rounded-full relative z-5000">
+          <div
+            className="progress-bar"
+            style={{ '--scroll-progress': `${scrollProgress}%` } as React.CSSProperties}
           />
         </div>
-        <div className="mt-2 text-center text-sm font-medium text-gray-400">
+        <div className="mt-2 text-center text-sm font-medium text-gray-400 z-5000">
           {currentSection}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
