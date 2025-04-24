@@ -51,7 +51,6 @@ To run this project locally:
     ```
 
     The site will be accessible at `http://localhost:[port]` (typically 3000).
-    The site will be accessible at `http://localhost:[port]` (typically 3000).
 
 ## Building for Production
 
